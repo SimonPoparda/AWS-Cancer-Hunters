@@ -152,6 +152,13 @@ WHERE name = 'KRAS' and location = 'lung'
 
 ANSWER: C and M
 
+## Summary
+With this query I finished my project. I found meaningful insides that brought real-life value into people's lives and simultaneously used AWS, as well as practiced SQL queries!
+
+## Authors
+
+- [@Szymon Poparda](https://www.linkedin.com/in/szymon-poparda-02b96a248/)
+
 
 
 
