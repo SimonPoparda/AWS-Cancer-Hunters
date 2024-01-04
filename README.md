@@ -124,4 +124,36 @@ P - ipilimumab with nivolumab
 - SCENARIO 4: DR. OWUSU AND LUNG CANCER PATIENTS
 An oncologist, Dr. Owusu, wants to better understand the sex ratio (male to female) of lung cancer patients in her practice. She suspects that the patients that she’s treating aren’t representative of the national average for male-to-female ratio for lung cancer patients, but she needs data to verify this hypothesis. Dr. Owusu also needs to know which of her lung cancer patients have the annotated KRAS mutation because her clinic is participating in a research study for treatment options for patients with this type of mutation.
 
+Statistics indicate that men are more likely to develop lung cancer than females. Does this dataset show that pattern? 
+
+```sql
+SELECT sex, COUNT(*) AS count_gender
+FROM (
+    SELECT * FROM samples 
+    WHERE location = 'lung'
+)
+GROUP BY sex
+```
+
+![](images/answer4.png)
+
+"Which patients (sample_source) have the KRAS mutation in their lung cancer?"
+
+```sql
+SELECT *
+FROM samples s
+LEFT JOIN vcf v ON s.tumor = v.tumor
+WHERE name = 'KRAS' and location = 'lung'
+```
+
+
+![](images/answer4.2.png)
+
+
+ANSWER: C and M
+
+
+
+
+
 
